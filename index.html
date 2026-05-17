@@ -24,22 +24,27 @@
   <header class="bg-gradient-to-r from-blue-900 via-indigo-800 to-rose-700 text-white shadow-lg sticky top-0 z-30">
     <div class="max-w-[1600px] mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
       <div>
-        <h1 class="text-xl md:text-2xl font-bold flex items-center gap-2">
-          <i data-lucide="mountain-snow" class="w-6 h-6"></i>
-          Roteiro Chile — Casal
+        <h1 class="text-base md:text-2xl font-bold flex items-center gap-2">
+          <i data-lucide="mountain-snow" class="w-5 h-5 md:w-6 md:h-6"></i>
+          <span class="hidden md:inline">Roteiro Chile — Casal</span>
+          <span class="md:hidden">Chile 🌋 2026</span>
         </h1>
-        <p class="text-xs md:text-sm opacity-90">30/06/2026 → 14/07/2026 · 15 dias · Santiago + arredores</p>
+        <p class="header-subtitle text-xs md:text-sm opacity-90 hidden md:block">30/06/2026 → 14/07/2026 · 15 dias · Santiago + arredores</p>
       </div>
       <div class="flex items-center gap-2 flex-wrap text-xs md:text-sm">
-        <span id="rate-display" class="bg-white/10 px-3 py-1 rounded-full">💱 R$ 1 = <span id="rate-value">175</span> CLP</span>
-        <button id="btn-update-rate" class="bg-emerald-500/80 hover:bg-emerald-400 px-3 py-1 rounded-full flex items-center gap-1 transition-colors">
-          <i data-lucide="refresh-cw" class="w-3 h-3"></i> <span id="rate-btn-label">Atualizar cotação</span>
+        <span id="rate-display" class="bg-white/10 px-2 md:px-3 py-1 rounded-full text-xs">💱 <span id="rate-value">175</span> <span class="hidden md:inline">CLP</span></span>
+        <button id="btn-update-rate" class="bg-emerald-500/80 hover:bg-emerald-400 px-2 md:px-3 py-1 rounded-full flex items-center gap-1 transition-colors">
+          <i data-lucide="refresh-cw" class="w-3 h-3"></i> <span id="rate-btn-label" class="hidden md:inline">Atualizar cotação</span>
         </button>
-        <button id="btn-reset" class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full flex items-center gap-1">
+        <button id="btn-reset" class="hidden md:flex bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full items-center gap-1">
           <i data-lucide="rotate-ccw" class="w-3 h-3"></i> Resetar tudo
         </button>
-        <button id="btn-export" class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full flex items-center gap-1">
+        <button id="btn-export" class="hidden md:flex bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full items-center gap-1">
           <i data-lucide="download" class="w-3 h-3"></i> Exportar
+        </button>
+        <!-- Mobile overflow menu -->
+        <button id="btn-more" class="md:hidden bg-white/10 hover:bg-white/20 p-1.5 rounded-full">
+          <i data-lucide="more-horizontal" class="w-4 h-4"></i>
         </button>
       </div>
     </div>
@@ -48,9 +53,23 @@
     <nav id="tabs-nav" class="max-w-[1600px] mx-auto px-4 pb-2 flex gap-1 text-sm overflow-x-auto"></nav>
   </header>
 
+  <!-- MOBILE: Day navigation bar (only for board tab) -->
+  <div id="day-nav-bar" class="hidden md:hidden fixed z-20 left-0 right-0 bg-indigo-900/95 text-white items-center justify-between px-2 py-1.5 text-sm select-none" style="bottom: calc(56px + env(safe-area-inset-bottom, 0px));">
+    <button id="day-prev" class="p-2 rounded-full active:bg-white/20 transition-colors touch-manipulation">
+      <i data-lucide="chevron-left" class="w-5 h-5"></i>
+    </button>
+    <div class="text-center flex-1 min-w-0">
+      <div id="day-nav-title" class="font-semibold text-sm truncate"></div>
+      <div id="day-nav-sub" class="text-[10px] opacity-70 truncate"></div>
+    </div>
+    <button id="day-next" class="p-2 rounded-full active:bg-white/20 transition-colors touch-manipulation">
+      <i data-lucide="chevron-right" class="w-5 h-5"></i>
+    </button>
+  </div>
+
   <!-- TAB: ROTEIRO (Trello board) -->
   <section id="tab-board" class="tab-content">
-    <div class="px-4 py-3 text-xs text-slate-600 max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-2">
+    <div class="board-hint px-4 py-3 text-xs text-slate-600 max-w-[1600px] mx-auto hidden md:flex flex-wrap items-center justify-between gap-2">
       <p>💡 <strong>Arraste cards</strong> entre dias · <strong>Arraste cabeçalhos</strong> para reordenar dias · <strong>Clique no card</strong> para ver/editar · <strong>+ no rodapé</strong> da coluna adiciona card</p>
       <div id="grand-totals" class="text-xs font-mono"></div>
     </div>
@@ -466,12 +485,25 @@
       });
     }
 
+    function syncBottomNav(tabId) {
+      document.querySelectorAll('.bottom-nav-btn').forEach(b => {
+        const active = b.dataset.tab === tabId;
+        b.classList.toggle('nav-active', active);
+      });
+      const dayNavBar = document.getElementById('day-nav-bar');
+      if (dayNavBar) {
+        if (tabId === 'board') dayNavBar.classList.remove('hidden');
+        else dayNavBar.classList.add('hidden');
+      }
+    }
+
     function switchTab(tabId) {
       state.activeTab = tabId;
       saveState();
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('tab-active', b.dataset.tab === tabId));
       document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
       document.getElementById('tab-' + tabId).classList.remove('hidden');
+      syncBottomNav(tabId);
       if (tabId === 'budget') renderBudget();
       if (tabId === 'checklist') renderChecklist();
       if (window.lucide) window.lucide.createIcons();
@@ -990,6 +1022,71 @@
       }
     }
 
+    function setupBottomNav() {
+      document.querySelectorAll('.bottom-nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+      });
+      // Overflow menu
+      document.getElementById('btn-more')?.addEventListener('click', e => {
+        e.stopPropagation();
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+        if (window.lucide) window.lucide.createIcons();
+      });
+      document.getElementById('btn-reset-mobile')?.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+        if (confirm('Resetar TUDO: ordem dos dias, cards customizados, checklist, ordem das tabs?')) {
+          localStorage.removeItem(STORAGE_KEY);
+          state = freshState();
+          saveState();
+          renderTabs();
+          renderBoard();
+          renderChecklist();
+          syncBottomNav(state.activeTab || 'board');
+        }
+      });
+      document.getElementById('btn-export-mobile')?.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+        document.getElementById('btn-export').click();
+      });
+    }
+
+    function setupDayNav() {
+      const board = document.getElementById('board');
+      const titleEl = document.getElementById('day-nav-title');
+      const subEl   = document.getElementById('day-nav-sub');
+      if (!board || !titleEl) return;
+
+      function currentIdx() {
+        const colW = window.innerWidth;
+        return Math.min(Math.round(board.scrollLeft / colW), state.dayOrder.length - 1);
+      }
+
+      function updateIndicator() {
+        const idx = currentIdx();
+        const dayId = state.dayOrder[idx];
+        const day = ITINERARY.find(d => d.id === dayId);
+        if (!day) return;
+        const dateLabel = day.date
+          ? new Date(day.date + 'T12:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' })
+          : '';
+        titleEl.textContent = `${dateLabel} · ${day.dow}`;
+        const stats = dayStats(dayId);
+        subEl.textContent = `Dia ${idx + 1}/${state.dayOrder.length} · ${stats.count} atividades · ${brl(stats.couple)} casal`;
+      }
+
+      board.addEventListener('scroll', updateIndicator, { passive: true });
+      updateIndicator();
+
+      document.getElementById('day-prev')?.addEventListener('click', () => {
+        const colW = window.innerWidth;
+        board.scrollTo({ left: (currentIdx() - 1) * colW, behavior: 'smooth' });
+      });
+      document.getElementById('day-next')?.addEventListener('click', () => {
+        const colW = window.innerWidth;
+        board.scrollTo({ left: (currentIdx() + 1) * colW, behavior: 'smooth' });
+      });
+    }
+
     function setupHeaderButtons() {
       document.getElementById('btn-update-rate').addEventListener('click', fetchRate);
 
@@ -1031,8 +1128,46 @@
       setupModal();
       setupChecklistButtons();
       setupHeaderButtons();
+      setupBottomNav();
+      setupDayNav();
       if (window.lucide) window.lucide.createIcons();
     });
   </script>
+
+  <!-- MOBILE: Bottom navigation bar -->
+  <nav id="bottom-nav" class="md:hidden fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-slate-200 flex shadow-[0_-2px_8px_rgba(0,0,0,0.08)]" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+    <button class="bottom-nav-btn flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation" data-tab="board">
+      <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium leading-tight">Roteiro</span>
+    </button>
+    <button class="bottom-nav-btn flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation" data-tab="budget">
+      <i data-lucide="wallet" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium leading-tight">Orçamento</span>
+    </button>
+    <button class="bottom-nav-btn flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation" data-tab="checklist">
+      <i data-lucide="check-square" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium leading-tight">Checklist</span>
+    </button>
+    <button class="bottom-nav-btn flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation" data-tab="map">
+      <i data-lucide="map" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium leading-tight">Mapa</span>
+    </button>
+    <button class="bottom-nav-btn flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation" data-tab="info">
+      <i data-lucide="info" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium leading-tight">Info</span>
+    </button>
+  </nav>
+
+  <!-- MOBILE: Overflow menu -->
+  <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-40" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+    <div class="absolute bottom-20 right-4 bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden min-w-[180px]" onclick="event.stopPropagation()">
+      <button id="btn-reset-mobile" class="w-full flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 active:bg-slate-100">
+        <i data-lucide="rotate-ccw" class="w-4 h-4 text-slate-500"></i> Resetar tudo
+      </button>
+      <button id="btn-export-mobile" class="w-full flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 active:bg-slate-100 border-t border-slate-100">
+        <i data-lucide="download" class="w-4 h-4 text-slate-500"></i> Exportar JSON
+      </button>
+    </div>
+  </div>
 </body>
 </html>
