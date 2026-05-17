@@ -70,11 +70,19 @@ body {
 .card {
   user-select: none;
   -webkit-user-drag: element;
-  /* iOS Safari: prevent page scroll during card drag */
+  /* Desktop: block all touch actions so drag works immediately */
   touch-action: none;
 }
 .card:active {
   cursor: grabbing;
+}
+
+/* Mobile: allow vertical pan so list scrolls on short touch;
+   SortableJS uses delay+delayOnTouchOnly so drag only fires on long press */
+@media (max-width: 767px) {
+  .card {
+    touch-action: pan-y;
+  }
 }
 
 /* --- Board: allow horizontal swipe freely --- */
