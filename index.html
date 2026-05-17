@@ -16,7 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="assets/styles.css" />
-  <script src="data/itinerary.js?v=3"></script>
+  <script src="data/itinerary.js?v=4"></script>
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen">
 
@@ -166,10 +166,12 @@
         <div class="p-5 space-y-3 text-sm">
           <div id="modal-view-details"></div>
           <div id="modal-view-links" class="flex flex-wrap gap-2"></div>
-          <div id="modal-view-photo" class="hidden bg-pink-50 border border-pink-200 rounded p-3">
-            <p class="font-semibold text-pink-800 mb-1">📷 Inspiração visual</p>
-            <p id="modal-view-photo-tip" class="text-xs text-slate-700 mb-2"></p>
-            <a id="modal-view-photo-link" target="_blank" class="text-xs text-pink-700 underline">Ver inspirações no Pinterest →</a>
+          <div id="modal-view-photo" class="hidden bg-pink-50 border border-pink-200 rounded-lg p-3">
+            <p class="font-semibold text-pink-800 mb-1 text-xs flex items-center gap-1">
+              <i data-lucide="camera" class="w-3.5 h-3.5"></i> Exemplos de fotos a tirar
+            </p>
+            <p id="modal-view-photo-tip" class="text-xs text-slate-600 mb-3 italic"></p>
+            <div id="modal-view-photo-examples" class="flex flex-col gap-2"></div>
           </div>
           <div id="modal-view-notes" class="bg-amber-50 border-l-4 border-amber-400 p-3 text-xs italic"></div>
         </div>
@@ -319,7 +321,7 @@
     // ===========================================================================
     // ESTADO + STORAGE
     // ===========================================================================
-    const STORAGE_KEY = 'chile-trip-state-v3';
+    const STORAGE_KEY = 'chile-trip-state-v4';
 
     const TYPE_CONFIG = {
       logistics:  { icon: 'plane',         label: 'Logística',     color: 'border-slate-400',  bg: 'bg-slate-100',  text: 'text-slate-700' },
@@ -403,7 +405,21 @@
         return {
           tabOrder: s.tabOrder || fresh.tabOrder,
           dayOrder: s.dayOrder || fresh.dayOrder,
-          cards: { ...fresh.cards, ...(s.cards || {}) },
+          // Per-card merge: fresh data as base (gets new fields like photoExamples),
+          // user edits (title/notes/time) on top — only for fields user can actually edit
+          cards: (() => {
+            const editableFields = ['title','type','time','duration','location','address','phone','mapsUrl','url','menuUrl','costPP','costCouple','needsReservation','reservationLeadDays','notes','tags'];
+            const merged = { ...fresh.cards };
+            Object.keys(s.cards || {}).forEach(id => {
+              if (merged[id]) {
+                const userCard = s.cards[id];
+                editableFields.forEach(f => { if (userCard[f] !== undefined) merged[id][f] = userCard[f]; });
+              } else {
+                merged[id] = s.cards[id]; // user-created card
+              }
+            });
+            return merged;
+          })(),
           dayCards: mergedDayCards,
           deletedCards: s.deletedCards || [],
           checklist: s.checklist || fresh.checklist,
@@ -736,16 +752,32 @@
       if (card.menuUrl) linkArr.push(`<a href="${card.menuUrl}" target="_blank" class="bg-orange-100 hover:bg-orange-200 text-orange-800 px-3 py-1 rounded text-xs">📋 Cardápio</a>`);
       document.getElementById('modal-view-links').innerHTML = linkArr.join('');
 
-      // Photo block
-      const photoBlock = document.getElementById('modal-view-photo');
-      if (card.type === 'photo' || card.inspirationUrl || card.lightTip) {
-        photoBlock.classList.remove('hidden');
-        document.getElementById('modal-view-photo-tip').textContent = card.lightTip || '';
-        const link = document.getElementById('modal-view-photo-link');
-        link.href = card.inspirationUrl || '#';
-        link.style.display = card.inspirationUrl ? 'inline' : 'none';
+      // Photo examples
+      const photoEl = document.getElementById('modal-view-photo');
+      const examplesEl = document.getElementById('modal-view-photo-examples');
+      document.getElementById('modal-view-photo-tip').textContent = card.lightTip || '';
+      if (card.photoExamples && card.photoExamples.length) {
+        examplesEl.innerHTML = card.photoExamples.map(ex => `
+          <a href="${ex.url}" target="_blank" rel="noopener"
+             class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 text-xs text-slate-700 hover:bg-pink-50 active:bg-pink-100 border border-pink-100 transition no-underline">
+            <span class="text-base leading-none flex-shrink-0">${ex.type.split(' ')[0]}</span>
+            <span class="flex-1 min-w-0">
+              <span class="font-medium text-pink-800">${ex.type.split(' ').slice(1).join(' ')}</span>
+              <span class="text-slate-500 ml-1">— ${ex.caption}</span>
+            </span>
+            <i data-lucide="external-link" class="w-3 h-3 text-pink-400 flex-shrink-0"></i>
+          </a>
+        `).join('');
+        photoEl.classList.remove('hidden');
+      } else if (card.inspirationUrl) {
+        // Fallback for old cards
+        examplesEl.innerHTML = `<a href="${card.inspirationUrl}" target="_blank" class="text-xs text-pink-700 underline">Ver inspirações →</a>`;
+        photoEl.classList.remove('hidden');
+      } else if (card.lightTip) {
+        examplesEl.innerHTML = '';
+        photoEl.classList.remove('hidden');
       } else {
-        photoBlock.classList.add('hidden');
+        photoEl.classList.add('hidden');
       }
 
       const notesEl = document.getElementById('modal-view-notes');

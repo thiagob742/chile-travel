@@ -96,7 +96,11 @@ const ITINERARY = [
       { id: "d1-5", type: "photo", time: "12:00", duration: "20min", title: "📷 Pórtico da Catedral + Plaza",
         location: "Frente da Catedral", mapsUrl: "https://www.google.com/maps/place/Catedral+Metropolitana+de+Santiago",
         photoCategory: "architecture",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=santiago+catedral+metropolitana+photography",
+        photoExamples: [
+          { type: "👫 Casal",      caption: "Juntos na escadaria neogótica", url: "https://unsplash.com/s/photos/couple-neogothic-cathedral-entrance" },
+          { type: "🏛️ Arquitetura", caption: "Detalhe das colunas em pedra cinza", url: "https://unsplash.com/s/photos/gothic-cathedral-portal-stone-detail" },
+          { type: "🙋 Individual",  caption: "Retrato com praça desfocada ao fundo", url: "https://unsplash.com/s/photos/portrait-historic-plaza-blurred-background" }
+        ],
         lightTip: "Manhã (8h-11h) com sol leste. Wide angle pega a praça inteira.",
         costPP: 0, costCouple: 0, notes: "Foto clássica: pórtico + Andes ao fundo se o ar tiver limpo." },
       { id: "d1-6", type: "attraction", time: "12:30", duration: "1h", title: "Palácio La Moneda + Plaza Ciudadanía",
@@ -112,7 +116,11 @@ const ITINERARY = [
       { id: "d1-PHOTO-FOOD1", type: "photo", time: "14:30", duration: "10min", title: "📷 Prato no Mercado Central (close-up)",
         location: "Donde Augusto", mapsUrl: "https://www.google.com/maps/place/Donde+Augusto",
         photoCategory: "food",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=chilean+seafood+plate+photography",
+        photoExamples: [
+          { type: "🍽️ Comida", caption: "Close overhead do caldillo de congrio", url: "https://unsplash.com/s/photos/chilean-fish-soup-overhead-food-photography" },
+          { type: "🍽️ Comida", caption: "Detalhe do vapor saindo da tigela", url: "https://unsplash.com/s/photos/seafood-bowl-steam-artistic-food" },
+          { type: "🍽️ Comida", caption: "Ambiente rústico do mercado ao fundo", url: "https://unsplash.com/s/photos/market-restaurant-seafood-rustic-atmosphere" }
+        ],
         lightTip: "Luz natural lateral pela janela. Foto antes de mexer no prato.",
         costPP: 0, costCouple: 0, notes: "Caldillo de congrio = postal gastronômico chileno. Prato fundo no centro." },
       { id: "d1-8", type: "snack", time: "15:30", duration: "30min", title: "Sorvete — Emporio La Rosa",
@@ -131,7 +139,11 @@ const ITINERARY = [
         location: "Costanera Center, 61º andar", mapsUrl: "https://www.google.com/maps/place/Sky+Costanera",
         url: "https://www.skycostanera.cl/",
         photoCategory: "place",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=sky+costanera+santiago+sunset",
+        photoExamples: [
+          { type: "🌅 Pôr do sol", caption: "Santiago ao pôr do sol do 61º andar", url: "https://unsplash.com/s/photos/sky-costanera-santiago-sunset-panorama" },
+          { type: "👫 Casal",      caption: "Casal silhueta na janela do mirante", url: "https://unsplash.com/s/photos/couple-silhouette-observation-deck-sunset" },
+          { type: "🏙️ Lugar",     caption: "Skyline de Santiago com Andes ao fundo", url: "https://unsplash.com/s/photos/santiago-skyline-andes-golden-hour" }
+        ],
         lightTip: "Pôr do sol no inverno: 17h30-18h. Chegar 30min antes para ficar perto do vidro oeste.",
         costPP: 57, costCouple: 114, notes: "Quarta = tarifa semana (CLP 10k). Maior mirante da AL." },
       { id: "d1-13", type: "meal", time: "20:00", duration: "1h45", title: "Jantar — Liguria Pedro de Valdivia",
@@ -175,14 +187,22 @@ const ITINERARY = [
       { id: "d2-PHOTO-SNOW", type: "photo", time: "14:15", duration: "15min", title: "📷 Equipamento + neve close-up",
         location: "Base do parque", mapsUrl: "https://www.google.com/maps/place/Parque+Farellones",
         photoCategory: "place",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=ski+gear+snow+photography+aesthetic",
+        photoExamples: [
+          { type: "👫 Casal",    caption: "Casal segurando esquis na neve", url: "https://unsplash.com/s/photos/couple-ski-equipment-snow-mountain" },
+          { type: "🙋 Individual", caption: "Botas de ski em close sobre neve", url: "https://unsplash.com/s/photos/ski-boots-close-up-snow-texture" },
+          { type: "🏔️ Paisagem", caption: "Esquis fincados na neve com montanhas ao fundo", url: "https://unsplash.com/s/photos/skis-standing-snow-mountain-backdrop" }
+        ],
         lightTip: "Sol no inverno = forte às 13-14h. Use modo retrato para esquis no fundo desfocado.",
         costPP: 0, costCouple: 0, notes: "Composição: botas + esqui de pé + neve atrás. Ângulo baixo." },
       { id: "d2-7", type: "photo", time: "15:00", duration: "20min", title: "📷 Mirante Cordón La Parva",
         location: "Mirador acima do parque",
         mapsUrl: "https://www.google.com/maps/place/Mirador+Farellones",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=valle+nevado+andes+panorama+photography",
+        photoExamples: [
+          { type: "🏔️ Paisagem", caption: "Panorama 360° dos três vales nevados dos Andes", url: "https://unsplash.com/s/photos/andes-mountain-panorama-three-valleys-snow" },
+          { type: "👫 Casal",    caption: "Casal no mirante com vale nevado atrás", url: "https://unsplash.com/s/photos/couple-mountain-overlook-snowy-valley" },
+          { type: "🙋 Individual", caption: "Silhueta contra o céu azul na altitude", url: "https://unsplash.com/s/photos/person-silhouette-mountain-peak-blue-sky" }
+        ],
         lightTip: "Após 14h, sol pelas costas, sombras suaves. Wide angle 16-24mm.",
         costPP: 0, costCouple: 0, notes: "Vista panorâmica dos 3 vales." },
       { id: "d2-8", type: "drive", time: "16:30", duration: "1h30", title: "Farellones → Santiago",
@@ -225,14 +245,22 @@ const ITINERARY = [
         location: "Topo do telecadeira Cono Este",
         mapsUrl: "https://www.google.com/maps/place/El+Colorado+Ski+Resort",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=aconcagua+from+chile+photography",
+        photoExamples: [
+          { type: "🏔️ Paisagem", caption: "Pico do Aconcágua com neve ao telefoto", url: "https://unsplash.com/s/photos/aconcagua-peak-telephoto-snow-clear-day" },
+          { type: "🙋 Individual", caption: "Pessoa apontando para o Aconcágua ao fundo", url: "https://unsplash.com/s/photos/person-pointing-aconcagua-mountain-distant" },
+          { type: "🏔️ Paisagem", caption: "Cadeia dos Andes de cima do teleférico", url: "https://unsplash.com/s/photos/andes-mountain-chain-chairlift-aerial" }
+        ],
         lightTip: "13h-15h melhor visibilidade. Tele zoom 70-200mm captura o pico distante.",
         costPP: 0, costCouple: 0, notes: "Em dias limpos vê Aconcágua + Tupungato." },
       { id: "d3-PHOTO-ALPENGLOW", type: "photo", time: "16:30", duration: "15min", title: "📷 Alpenglow — montanhas em rosa",
         location: "Mirador alto El Colorado",
         mapsUrl: "https://www.google.com/maps/place/El+Colorado+Ski+Resort",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=alpenglow+andes+pink+mountains",
+        photoExamples: [
+          { type: "🌅 Pôr do sol", caption: "Montanhas dos Andes pintadas de rosa-coral", url: "https://unsplash.com/s/photos/alpenglow-andes-pink-mountains-dramatic" },
+          { type: "👫 Casal",      caption: "Casal silhueta contra céu laranja do alpenglow", url: "https://unsplash.com/s/photos/couple-silhouette-alpenglow-orange-sky" },
+          { type: "🏔️ Paisagem",  caption: "Neve da encosta refletindo cor quente do pôr do sol", url: "https://unsplash.com/s/photos/snow-slope-sunset-warm-colors-reflection" }
+        ],
         lightTip: "30min antes do pôr do sol. Sol pinta neve de rosa/coral. Foto rápida — duração 5-10min.",
         costPP: 0, costCouple: 0, notes: "Fenômeno raro. Câmera com modo paisagem + saturação leve." },
       { id: "d3-7", type: "drive", time: "17:00", duration: "1h30", title: "El Colorado → Santiago",
@@ -280,14 +308,22 @@ const ITINERARY = [
         location: "Cumbre Valle Nevado",
         mapsUrl: "https://www.google.com/maps/place/Valle+Nevado",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=valle+nevado+summit+andes+photography",
+        photoExamples: [
+          { type: "👫 Casal",    caption: "Casal no cume nevado com placa de altitude", url: "https://unsplash.com/s/photos/couple-mountain-summit-altitude-sign-snow" },
+          { type: "🏔️ Paisagem", caption: "Vista 360° dos picos nevados da cordilheira", url: "https://unsplash.com/s/photos/360-panorama-snowy-andes-peaks-summit" },
+          { type: "🙋 Individual", caption: "Selfie na altitude com nuvens abaixo", url: "https://unsplash.com/s/photos/mountain-summit-selfie-clouds-below" }
+        ],
         lightTip: "Sol forte na neve = use óculos no rosto pra contrastar. Polarizador no celular pra reduzir reflexo.",
         costPP: 0, costCouple: 0, notes: "Vista 360º. Em dias claros: Aconcágua + Tupungato + Volcán San José." },
       { id: "d4-7", type: "sunset", time: "17:30", duration: "45min", title: "🌅 SUNSET — Mirador Valle Nevado",
         location: "Deck do Hotel Valle Nevado",
         mapsUrl: "https://www.google.com/maps/place/Valle+Nevado",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=valle+nevado+sunset+andes",
+        photoExamples: [
+          { type: "🌅 Pôr do sol", caption: "Pôr do sol dourado sobre picos nevados dos Andes", url: "https://unsplash.com/s/photos/golden-sunset-snowy-andes-peaks-winter" },
+          { type: "👫 Casal",      caption: "Casal silhueta no deck com sol descendo", url: "https://unsplash.com/s/photos/couple-silhouette-mountain-sunset-deck" },
+          { type: "🏔️ Paisagem",  caption: "Céu laranja-vermelho atrás da montanha nevada", url: "https://unsplash.com/s/photos/orange-red-sky-snow-mountain-dramatic-sunset" }
+        ],
         lightTip: "17h40 no inverno. Vista oeste com Andes. Use modo HDR no celular.",
         costPP: 0, costCouple: 0, notes: "Cai pra -10ºC rapidamente. Leve agasalho extra." },
       { id: "d4-8", type: "drive", time: "18:30", duration: "2h15", title: "Valle Nevado → Santiago (noturno)",
@@ -325,7 +361,11 @@ const ITINERARY = [
         location: "Mirante norte",
         mapsUrl: "https://www.google.com/maps/@-33.6845,-70.0789,15z",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=embalse+el+yeso+chile+turquoise+photography",
+        photoExamples: [
+          { type: "🏔️ Paisagem", caption: "Água turquesa do embalse com montanhas", url: "https://unsplash.com/s/photos/turquoise-reservoir-mountain-reflection-chile" },
+          { type: "👫 Casal",    caption: "Casal à beira do embalse com reflexo", url: "https://unsplash.com/s/photos/couple-turquoise-lake-mountain-reflection" },
+          { type: "🙋 Individual", caption: "Pessoa debruçada olhando a cor da água", url: "https://unsplash.com/s/photos/person-looking-turquoise-water-alpine-lake" }
+        ],
         lightTip: "Meio-dia = água mais turquesa (sol vertical). Polarizador reduz reflexo da água.",
         costPP: 0, costCouple: 0, notes: "Foto: pessoa em primeiro plano, água + montanhas no fundo." },
       { id: "d5-5", type: "drive", time: "12:30", duration: "45min", title: "Embalse → San José de Maipo",
@@ -341,7 +381,11 @@ const ITINERARY = [
         location: "Cascada de las Animas",
         mapsUrl: "https://www.google.com/maps/place/Cascada+de+las+%C3%81nimas",
         photoCategory: "food",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=patagonian+lamb+rustic+food+photography",
+        photoExamples: [
+          { type: "🍽️ Comida", caption: "Costillar grelhado em close com fogo", url: "https://unsplash.com/s/photos/grilled-lamb-ribs-close-fire-smoke" },
+          { type: "🍽️ Comida", caption: "Prato rústico do asado chileno na tábua", url: "https://unsplash.com/s/photos/rustic-asado-chilean-bbq-wooden-board" },
+          { type: "🍽️ Comida", caption: "Detalhe da textura carbonizada da carne", url: "https://unsplash.com/s/photos/charred-grilled-meat-texture-close-bbq" }
+        ],
         lightTip: "Luz da janela do salão rústico. Foto 45º acima do prato com madeira ao fundo.",
         costPP: 0, costCouple: 0, notes: "Iluminação suave do salão de madeira faz diferença." },
       { id: "d5-7", type: "hotsprings", time: "15:30", duration: "1h30", title: "♨️ Termas Cascada de las Animas",
@@ -387,14 +431,22 @@ const ITINERARY = [
         location: "Cerro Concepción",
         mapsUrl: "https://www.google.com/maps/place/Paseo+Gervasoni",
         photoCategory: "place",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=valparaiso+cerro+concepcion+photography",
+        photoExamples: [
+          { type: "🏙️ Lugar",    caption: "Casas coloridas do Cerro Alegre na escadaria", url: "https://unsplash.com/s/photos/valparaiso-colorful-houses-stairs-cerro-alegre" },
+          { type: "👫 Casal",    caption: "Casal caminhando no beco com casas coloridas", url: "https://unsplash.com/s/photos/couple-walking-colorful-alley-valparaiso" },
+          { type: "🏛️ Arquitetura", caption: "Fachada victoriana com vista do mar ao fundo", url: "https://unsplash.com/s/photos/victorian-house-facade-valparaiso-ocean-view" }
+        ],
         lightTip: "Manhã 9h-11h: sol nascente acende o porto. Use HDR.",
         costPP: 0, costCouple: 0, notes: "Mirantes panorâmicos + murais ao redor." },
       { id: "d6-PHOTO-MURAL", type: "photo", time: "11:00", duration: "30min", title: "📷 Murais de Valparaíso (Templeman)",
         location: "Calle Templeman + Pasaje Bavestrello",
         mapsUrl: "https://www.google.com/maps/place/Pasaje+Bavestrello",
         photoCategory: "art",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=valparaiso+street+art+murals",
+        photoExamples: [
+          { type: "🎨 Arte/Mural", caption: "Mural de rua gigante com street art vibrante", url: "https://unsplash.com/s/photos/valparaiso-street-art-mural-vibrant-colors" },
+          { type: "👫 Casal",      caption: "Casal em frente ao mural colorido", url: "https://unsplash.com/s/photos/couple-front-street-art-mural-colorful" },
+          { type: "🙋 Individual", caption: "Pessoa pequena ao lado do mural gigante — escala", url: "https://unsplash.com/s/photos/person-small-giant-mural-street-art-scale" }
+        ],
         lightTip: "Sombra parcial no meio do dia preserva cores. Evite flash.",
         costPP: 0, costCouple: 0, notes: "Pasaje Bavestrello tem o mural-piano. Rua Templeman concentra murais." },
       { id: "d6-6", type: "attraction", time: "11:30", duration: "1h", title: "La Sebastiana (Casa de Neruda)",
@@ -406,7 +458,11 @@ const ITINERARY = [
         location: "Pasaje Bavestrello",
         mapsUrl: "https://www.google.com/maps/place/Pasaje+Bavestrello",
         photoCategory: "art",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=valparaiso+piano+stairs",
+        photoExamples: [
+          { type: "🏛️ Arquitetura", caption: "Escadaria musical pintada em preto e branco", url: "https://unsplash.com/s/photos/piano-staircase-painted-black-white-valparaiso" },
+          { type: "👫 Casal",       caption: "Casal sentado nos degraus do piano", url: "https://unsplash.com/s/photos/couple-sitting-piano-staircase-colorful" },
+          { type: "🙋 Individual",  caption: "Vista de baixo para cima na escadaria", url: "https://unsplash.com/s/photos/looking-up-painted-staircase-perspective" }
+        ],
         lightTip: "Meio-dia ideal — toda escadaria iluminada. Foto vertical full body.",
         costPP: 0, costCouple: 0, notes: "Teclas pintadas nos degraus. Cliché mas funciona." },
       { id: "d6-7", type: "meal", time: "13:00", duration: "1h30", title: "Almoço — Fauna Hotel",
@@ -465,14 +521,22 @@ const ITINERARY = [
         location: "Mirador da vinícola",
         mapsUrl: "https://www.google.com/maps/place/Vi%C3%B1a+Casas+del+Bosque",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=casablanca+valley+vineyard+andes",
+        photoExamples: [
+          { type: "🏔️ Paisagem", caption: "Fileiras de vinhedo com Andes nevados ao fundo", url: "https://unsplash.com/s/photos/vineyard-rows-snowy-andes-mountains-casablanca" },
+          { type: "👫 Casal",    caption: "Casal caminhando entre fileiras de videiras", url: "https://unsplash.com/s/photos/couple-walking-vineyard-rows-wine" },
+          { type: "🌅 Pôr do sol", caption: "Luz dourada do inverno no vinhedo ao entardecer", url: "https://unsplash.com/s/photos/golden-light-winter-vineyard-sunset" }
+        ],
         lightTip: "Manhã = sombras longas dramáticas. Pôr-do-sol = golden hour incrível.",
         costPP: 0, costCouple: 0, notes: "Vinhas em filas + Andes ao fundo." },
       { id: "d7-PHOTO-WINE", type: "photo", time: "12:30", duration: "15min", title: "📷 Taças contraluz na degustação",
         location: "Sala de degustação Casas del Bosque",
         mapsUrl: "https://www.google.com/maps/place/Vi%C3%B1a+Casas+del+Bosque",
         photoCategory: "food",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=wine+glasses+backlit+tasting+photography",
+        photoExamples: [
+          { type: "🍷 Vinho/Bebida", caption: "Taça de vinho tinto contraluz janela", url: "https://unsplash.com/s/photos/red-wine-glass-backlit-window-translucent" },
+          { type: "🍷 Vinho/Bebida", caption: "Duas taças brindando com vinhedo ao fundo", url: "https://unsplash.com/s/photos/two-wine-glasses-cheers-vineyard-background" },
+          { type: "🍷 Vinho/Bebida", caption: "Close das bolhas e cor do vinho na taça", url: "https://unsplash.com/s/photos/wine-glass-close-bubbles-color-tasting" }
+        ],
         lightTip: "Posicione taça entre você e janela. Modo retrato. Mostra cor + barbeles.",
         costPP: 0, costCouple: 0, notes: "Detalhe das cores. 5 taças alinhadas = série bonita." },
       { id: "d7-5", type: "meal", time: "12:45", duration: "1h45", title: "Almoço — Tanino (Casas del Bosque)",
@@ -530,7 +594,11 @@ const ITINERARY = [
         location: "Sala Andes Pre-Colombino",
         mapsUrl: "https://www.google.com/maps/place/Museo+Chileno+de+Arte+Precolombino",
         photoCategory: "art",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=pre+columbian+ceramic+museum+photography",
+        photoExamples: [
+          { type: "🏛️ Arquitetura", caption: "Close em peça de cerâmica andina — textura", url: "https://unsplash.com/s/photos/pre-columbian-ceramic-vessel-close-andean" },
+          { type: "🎨 Arte/Mural",  caption: "Detalhe de padrões geométricos em cerâmica", url: "https://unsplash.com/s/photos/geometric-patterns-ceramic-ancient-pottery-detail" },
+          { type: "🏛️ Arquitetura", caption: "Vitrine de museu com iluminação dramática", url: "https://unsplash.com/s/photos/museum-display-case-dramatic-lighting-artifacts" }
+        ],
         lightTip: "Sem flash. ISO 1600. Vidro = ajuste ângulo para evitar reflexo.",
         costPP: 0, costCouple: 0, notes: "Foto permitida sem flash. Detalhe textura da cerâmica." },
       { id: "d8-NEW-HISTNAC", type: "attraction", time: "11:45", duration: "30min", title: "🏛️ Museu Histórico Nacional",
@@ -576,7 +644,11 @@ const ITINERARY = [
         location: "GAM exterior",
         mapsUrl: "https://www.google.com/maps/place/Centro+Cultural+Gabriela+Mistral",
         photoCategory: "architecture",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=GAM+santiago+architecture+photography",
+        photoExamples: [
+          { type: "🏛️ Arquitetura", caption: "Estrutura em ferro do GAM em perspectiva", url: "https://unsplash.com/s/photos/gam-santiago-metal-structure-architecture-perspective" },
+          { type: "🙋 Individual",  caption: "Silhueta contra grade de ferro transparente", url: "https://unsplash.com/s/photos/silhouette-metal-grid-architecture-transparent" },
+          { type: "🏛️ Arquitetura", caption: "Contraste concreto vs vidro moderno centro cultural", url: "https://unsplash.com/s/photos/modern-cultural-center-concrete-glass-contrast" }
+        ],
         lightTip: "Final tarde + luzes acendendo = contraste épico. Aposte em foto vertical.",
         costPP: 0, costCouple: 0, notes: "Estrutura industrial coberta de aço corten." },
       { id: "d8-9", type: "snack", time: "18:15", duration: "30min", title: "🥯 Sopaipillas con pebre (Plaza Italia)",
@@ -587,7 +659,11 @@ const ITINERARY = [
         location: "Plaza Italia",
         mapsUrl: "https://www.google.com/maps/place/Plaza+Baquedano",
         photoCategory: "food",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=sopaipillas+chile+street+food+photography",
+        photoExamples: [
+          { type: "🍽️ Comida", caption: "Stack de sopaipillas fritas douradas", url: "https://unsplash.com/s/photos/sopaipilla-fried-golden-stack-chilean-food" },
+          { type: "🍽️ Comida", caption: "Mão segurando sopaipilla em close", url: "https://unsplash.com/s/photos/hand-holding-sopaipilla-street-food-chile" },
+          { type: "🍽️ Comida", caption: "Sopaipilla com pebre e molho de tomate", url: "https://unsplash.com/s/photos/sopaipilla-with-pebre-sauce-chilean-street" }
+        ],
         lightTip: "Final de tarde = luz dourada lateral. Foto top-down ou 45º.",
         costPP: 0, costCouple: 0, notes: "Composição: sopaipilla + pote de pebre + mão segurando." },
       { id: "d8-10", type: "meal", time: "20:00", duration: "1h45", title: "Jantar — Mulato",
@@ -630,7 +706,11 @@ const ITINERARY = [
         location: "Cumbre San Cristóbal",
         mapsUrl: "https://www.google.com/maps/place/Cerro+San+Crist%C3%B3bal",
         photoCategory: "place",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=cerro+san+cristobal+santiago+virgen",
+        photoExamples: [
+          { type: "👫 Casal",       caption: "Casal com panorama de Santiago ao fundo", url: "https://unsplash.com/s/photos/couple-santiago-panorama-cerro-san-cristobal" },
+          { type: "🏙️ Lugar",      caption: "Panorâmica de Santiago ao entardecer do cerro", url: "https://unsplash.com/s/photos/santiago-city-panorama-sunset-cerro-san-cristobal" },
+          { type: "🏛️ Arquitetura", caption: "Estátua da Virgem Imaculada em close", url: "https://unsplash.com/s/photos/virgin-mary-statue-santiago-cerro-close" }
+        ],
         lightTip: "Manhã: cidade clara, Andes ao fundo. Use polarizador para reduzir poluição.",
         costPP: 0, costCouple: 0, notes: "Vista 360°. Foto clássica: cidade + Andes." },
       { id: "d9-4", type: "attraction", time: "12:15", duration: "30min", title: "Teleférico descida (Tupahue → Costanera)",
@@ -645,7 +725,11 @@ const ITINERARY = [
         location: "Pasaje Antonia López de Bello + ruas adjacentes",
         mapsUrl: "https://www.google.com/maps/place/Bellavista,+Santiago",
         photoCategory: "art",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=bellavista+santiago+street+art+murals",
+        photoExamples: [
+          { type: "🎨 Arte/Mural", caption: "Mural político arte urbana Bellavista", url: "https://unsplash.com/s/photos/bellavista-santiago-street-art-political-mural" },
+          { type: "👫 Casal",      caption: "Casal posando em frente a mural colorido", url: "https://unsplash.com/s/photos/couple-posing-colorful-mural-bellavista" },
+          { type: "🎨 Arte/Mural", caption: "Detalhe de olhos/rosto em grande mural", url: "https://unsplash.com/s/photos/close-up-face-eyes-street-mural-urban-art" }
+        ],
         lightTip: "Tarde 14h-16h = luz frontal nas paredes oeste. Cores vibrantes.",
         costPP: 0, costCouple: 0, notes: "Inkie, Charquipunk, La Robot de Madera. Caminhada de 30min." },
       { id: "d9-6", type: "attraction", time: "15:30", duration: "1h15", title: "🏛️ La Chascona (Casa de Neruda)",
@@ -657,7 +741,11 @@ const ITINERARY = [
         location: "Pátio interno",
         mapsUrl: "https://www.google.com/maps/place/La+Chascona",
         photoCategory: "architecture",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=la+chascona+neruda+mosaic+detail",
+        photoExamples: [
+          { type: "🎨 Arte/Mural", caption: "Mosaico de azulejos coloridos em close", url: "https://unsplash.com/s/photos/colorful-mosaic-tiles-close-garden-neruda" },
+          { type: "🏛️ Arquitetura", caption: "Vista do jardim com mosaicos e plantas", url: "https://unsplash.com/s/photos/neruda-house-garden-mosaic-plants-chascona" },
+          { type: "👫 Casal",      caption: "Casal junto à parede de mosaicos", url: "https://unsplash.com/s/photos/couple-mosaic-wall-colorful-garden" }
+        ],
         lightTip: "Pátio com luz difusa toda tarde. Macro do detalhe das pedras.",
         costPP: 0, costCouple: 0, notes: "Detalhes pedras coloridas no chão e fontes. Macro recomendado." },
       { id: "d9-7", type: "snack", time: "17:00", duration: "45min", title: "Patio Bellavista — sorvete ou cerveja",
@@ -668,7 +756,11 @@ const ITINERARY = [
         location: "Cerro San Cristóbal lado leste",
         mapsUrl: "https://www.google.com/maps/place/Mirador+Pablo+Neruda",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=cerro+san+cristobal+sunset+andes",
+        photoExamples: [
+          { type: "🌅 Pôr do sol", caption: "Andes iluminados pelo sol poente no leste", url: "https://unsplash.com/s/photos/cerro-san-cristobal-andes-sunset-east" },
+          { type: "👫 Casal",      caption: "Casal no mirante com cordilheira ao fundo", url: "https://unsplash.com/s/photos/couple-mirador-andes-golden-hour-sunset" },
+          { type: "🏙️ Lugar",     caption: "Santiago ao crepúsculo do alto do cerro", url: "https://unsplash.com/s/photos/santiago-dusk-cerro-san-cristobal-city" }
+        ],
         lightTip: "Sol põe-se atrás de você, ilumina Andes. Modo HDR ou exposições múltiplas.",
         costPP: 0, costCouple: 0, notes: "Vista leste = Andes iluminados pelo sol que se põe." },
       { id: "d9-9", type: "meal", time: "20:30", duration: "1h45", title: "Jantar — Como Agua Para Chocolate",
@@ -706,14 +798,22 @@ const ITINERARY = [
         location: "Próximo ao restaurante",
         mapsUrl: "https://www.google.com/maps/place/Vi%C3%B1a+Concha+y+Toro",
         photoCategory: "architecture",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=concha+y+toro+mansion+santiago",
+        photoExamples: [
+          { type: "🏛️ Arquitetura", caption: "Fachada colonial da casona histórica", url: "https://unsplash.com/s/photos/colonial-mansion-historic-facade-concha-toro-1875" },
+          { type: "👫 Casal",       caption: "Casal na entrada da casona com barris", url: "https://unsplash.com/s/photos/couple-winery-entrance-wine-barrels-historic" },
+          { type: "🏛️ Arquitetura", caption: "Parreiral antigo com videiras sobre a casona", url: "https://unsplash.com/s/photos/old-vine-pergola-historic-winery-stone" }
+        ],
         lightTip: "Manhã = sombras suaves. Fonte central da entrada = simetria.",
         costPP: 0, costCouple: 0, notes: "Mansão 1875 + jardim francês." },
       { id: "d10-PHOTO-CAVA", type: "photo", time: "12:30", duration: "15min", title: "📷 Cave do Diabo (corredor low-light)",
         location: "Interior Cava Concha y Toro",
         mapsUrl: "https://www.google.com/maps/place/Vi%C3%B1a+Concha+y+Toro",
         photoCategory: "architecture",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=wine+cellar+cave+corridor+photography",
+        photoExamples: [
+          { type: "🏛️ Arquitetura", caption: "Corredor de barris de carvalho em cave escura", url: "https://unsplash.com/s/photos/wine-cave-oak-barrels-corridor-dark-low-light" },
+          { type: "🍷 Vinho/Bebida", caption: "Barril com reflexo de luz dramático", url: "https://unsplash.com/s/photos/wine-barrel-dramatic-lighting-cave-reflection" },
+          { type: "🙋 Individual",  caption: "Pessoa andando entre barris no corredor", url: "https://unsplash.com/s/photos/person-walking-wine-cave-barrel-corridor" }
+        ],
         lightTip: "Low-light. Apoie no celular ou aumente ISO. Sem flash (proibido). Foto vertical do corredor.",
         costPP: 0, costCouple: 0, notes: "Corredor de barricas com pouca luz. Atmosfera misteriosa." },
       { id: "d10-5", type: "meal", time: "13:00", duration: "1h30", title: "Almoço — Vino Bello",
@@ -735,7 +835,11 @@ const ITINERARY = [
         location: "Mirante da vinícola",
         mapsUrl: "https://www.google.com/maps/place/Vi%C3%B1a+El+Principal",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=alto+maipo+vineyard+sunset+andes",
+        photoExamples: [
+          { type: "🌅 Pôr do sol", caption: "Sol descendo atrás dos Andes sobre o vinhedo", url: "https://unsplash.com/s/photos/alto-maipo-vineyard-sunset-andes-mountains" },
+          { type: "🍷 Vinho/Bebida", caption: "Taça de vinho em primeiro plano com cordilheira atrás", url: "https://unsplash.com/s/photos/wine-glass-foreground-mountain-sunset-andes" },
+          { type: "👫 Casal",      caption: "Brinde dos dois no mirante com sol poente", url: "https://unsplash.com/s/photos/couple-cheers-wine-vineyard-sunset" }
+        ],
         lightTip: "Sol põe-se atrás dos Andes ~17h40. Taça em primeiro plano + cordilheira atrás = postal.",
         costPP: 0, costCouple: 0, notes: "Brinde final do tour com sunset. Diferencial dessa vinícola." },
       { id: "d10-NEW-RETURN", type: "drive", time: "18:30", duration: "1h", title: "El Principal → Santiago",
@@ -778,7 +882,11 @@ const ITINERARY = [
         location: "Frente do museu",
         mapsUrl: "https://www.google.com/maps/place/Museo+de+la+Memoria+y+los+Derechos+Humanos",
         photoCategory: "architecture",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=museo+memoria+santiago+architecture",
+        photoExamples: [
+          { type: "🏛️ Arquitetura", caption: "Fachada geométrica brutalista do museu", url: "https://unsplash.com/s/photos/museum-memory-human-rights-brutalist-geometry-santiago" },
+          { type: "🙋 Individual",  caption: "Silhueta contra a fachada com luz e sombra", url: "https://unsplash.com/s/photos/silhouette-museum-facade-light-shadow-geometric" },
+          { type: "🏛️ Arquitetura", caption: "Grade de ferro com reflexo do céu azul", url: "https://unsplash.com/s/photos/iron-grid-museum-blue-sky-reflection-memorial" }
+        ],
         lightTip: "Meio-dia: estrutura suspensa cria sombras geométricas. Wide angle.",
         costPP: 0, costCouple: 0, notes: "Edifício moderno suspenso. Estrutura = arte." },
       { id: "d11-NEW-CEMENT", type: "attraction", time: "14:00", duration: "1h", title: "🏛️ Cementerio General",
@@ -801,7 +909,11 @@ const ITINERARY = [
         location: "Hall central + galerias",
         mapsUrl: "https://www.google.com/maps/place/Museo+Nacional+de+Bellas+Artes",
         photoCategory: "art",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=museo+bellas+artes+santiago+interior",
+        photoExamples: [
+          { type: "🏛️ Arquitetura", caption: "Escadaria art nouveau em perspectiva de baixo", url: "https://unsplash.com/s/photos/art-nouveau-staircase-perspective-museum-beaux-arts" },
+          { type: "🎨 Arte/Mural",  caption: "Obra de arte em grande formato na parede", url: "https://unsplash.com/s/photos/large-format-painting-museum-wall-gallery" },
+          { type: "🙋 Individual",  caption: "Pessoa sentada no mármore admirando obra", url: "https://unsplash.com/s/photos/person-sitting-museum-floor-looking-artwork" }
+        ],
         lightTip: "Sem flash. Luz natural pela clarabóia. Escadaria = simetria + ângulo baixo.",
         costPP: 0, costCouple: 0, notes: "Escadaria + clarabóia + obras = composições prontas." },
       { id: "d11-7", type: "attraction", time: "18:30", duration: "30min", title: "🏛️ MAVI (Artes Visuais)",
@@ -852,7 +964,11 @@ const ITINERARY = [
         location: "Cumbre Manquehue",
         mapsUrl: "https://www.google.com/maps/place/Cerro+Manquehue",
         photoCategory: "nature",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=cerro+manquehue+santiago+summit+view",
+        photoExamples: [
+          { type: "👫 Casal",    caption: "Casal no topo com Santiago espalhado ao fundo", url: "https://unsplash.com/s/photos/couple-mountain-summit-city-panorama-santiago" },
+          { type: "🏙️ Lugar",   caption: "Santiago visto do cume — metrópole vs Andes", url: "https://unsplash.com/s/photos/santiago-city-panorama-andes-mountain-summit" },
+          { type: "🙋 Individual", caption: "Pessoa no topo com vento no cabelo", url: "https://unsplash.com/s/photos/person-mountain-top-windy-hair-city-below" }
+        ],
         lightTip: "Manhã 9-11h = ar mais limpo, sol leste ilumina Andes. Tarde = poluição.",
         costPP: 0, costCouple: 0, notes: "Foto épica do casal com Andes inteiros atrás. Vista superior à do San Cristóbal." },
       { id: "d12-NEW-RETURN", type: "drive", time: "12:00", duration: "30min", title: "Manquehue → Airbnb (banho + descanso)",
@@ -877,14 +993,22 @@ const ITINERARY = [
         location: "Av. Italia entre Sucre e Caupolicán",
         mapsUrl: "https://www.google.com/maps/place/Barrio+Italia",
         photoCategory: "place",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=barrio+italia+santiago+chile",
+        photoExamples: [
+          { type: "🏙️ Lugar",    caption: "Pátio secreto com plantas e arte vintage", url: "https://unsplash.com/s/photos/hidden-courtyard-vintage-art-plants-santiago" },
+          { type: "🎨 Arte/Mural", caption: "Mural colorido em pátio interno", url: "https://unsplash.com/s/photos/colorful-mural-inner-courtyard-barrio-italia" },
+          { type: "👫 Casal",    caption: "Casal descobrindo pátio escondido", url: "https://unsplash.com/s/photos/couple-discovering-hidden-courtyard-colorful" }
+        ],
         lightTip: "Tarde = pátios coloridos com luz quente. Verticais ficam ótimas.",
         costPP: 0, costCouple: 0, notes: "Pátio Italia tem alma autoral, distinto do Patio Bellavista." },
       { id: "d12-PHOTO-ANTIQUE", type: "photo", time: "17:00", duration: "15min", title: "📷 Interior de antiquário",
         location: "Antiquários Av. Italia",
         mapsUrl: "https://www.google.com/maps/place/Barrio+Italia",
         photoCategory: "place",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=antique+shop+interior+vintage+photography",
+        photoExamples: [
+          { type: "🎨 Arte/Mural", caption: "Estante cheia de objetos vintage em composição", url: "https://unsplash.com/s/photos/antique-shop-shelf-vintage-objects-composition" },
+          { type: "🏛️ Arquitetura", caption: "Objetos antigos em close — texturas e tons", url: "https://unsplash.com/s/photos/antique-objects-close-texture-warm-tones" },
+          { type: "🙋 Individual",  caption: "Pessoa folheando livros antigos em loja", url: "https://unsplash.com/s/photos/person-browsing-vintage-books-antique-shop" }
+        ],
         lightTip: "Luz amarela das lojas + objetos. ISO alto, foco em detalhes.",
         costPP: 0, costCouple: 0, notes: "Peça permissão antes. Detalhes vintage = história visual." },
       { id: "d12-4", type: "attraction", time: "17:30", duration: "1h", title: "Cerro Santa Lucía (revisita)",
@@ -961,7 +1085,11 @@ const ITINERARY = [
         location: "Mesa do restaurante",
         mapsUrl: "https://www.google.com/maps/place/Borag%C3%B3",
         photoCategory: "food",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=borago+restaurant+chile+plate+photography",
+        photoExamples: [
+          { type: "🍽️ Comida", caption: "Prato haute cuisine com ingredientes da Patagônia", url: "https://unsplash.com/s/photos/borage-restaurant-haute-cuisine-patagonian-plating" },
+          { type: "🍽️ Comida", caption: "Detalhe artístico do empratamento Boragó", url: "https://unsplash.com/s/photos/artistic-plating-close-fine-dining-chile" },
+          { type: "🍽️ Comida", caption: "Ambiente do restaurante com iluminação suave", url: "https://unsplash.com/s/photos/upscale-restaurant-ambiance-soft-lighting-chile" }
+        ],
         lightTip: "Luz baixa do restaurante. Use 'modo noturno'. Confirme com o garçom se fotos são permitidas.",
         costPP: 0, costCouple: 0, notes: "Pratos do Boragó são arte. Fotografe com discrição entre tempos." },
       { id: "d13-8", type: "drive", time: "23:00", duration: "20min", title: "Vitacura → Airbnb",
@@ -987,7 +1115,11 @@ const ITINERARY = [
         location: "Estação Cal y Canto",
         mapsUrl: "https://www.google.com/maps/place/Estaci%C3%B3n+Mapocho",
         photoCategory: "architecture",
-        inspirationUrl: "https://www.pinterest.com/search/pins/?q=puente+cal+y+canto+santiago+mapocho",
+        photoExamples: [
+          { type: "🏛️ Arquitetura", caption: "Ponte histórica com reflexo no Rio Mapocho", url: "https://unsplash.com/s/photos/puente-cal-canto-reflection-mapocho-river-santiago" },
+          { type: "🙋 Individual",  caption: "Pessoa na ponte ao amanhecer com neblina", url: "https://unsplash.com/s/photos/person-bridge-morning-mist-river-sunrise" },
+          { type: "🏙️ Lugar",      caption: "Vista do rio Mapocho com Andes ao fundo", url: "https://unsplash.com/s/photos/mapocho-river-andes-mountains-santiago-bridge" }
+        ],
         lightTip: "Manhã com Andes ao fundo (raro, depende do ar). Foto vertical pega ponte + rio + cerro.",
         costPP: 0, costCouple: 0, notes: "Despedida visual. Mapocho + Cerro San Cristóbal ao fundo." },
       { id: "d14-3", type: "logistics", time: "10:45", duration: "1h", title: "Check-out Airbnb + bagagens",
