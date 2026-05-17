@@ -1,0 +1,6 @@
+tmp_yt/
+*.pyc
+__pycache__/
+.DS_Store
+Thumbs.db
+*.log

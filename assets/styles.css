@@ -1,0 +1,231 @@
+/* =============================================================================
+   Roteiro Chile — estilos extras além do Tailwind
+   ============================================================================= */
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* --- Tabs --- */
+.tab-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.2s ease;
+  cursor: grab;
+}
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.tab-btn.tab-active {
+  background: white;
+  color: #1e1b4b;
+  font-weight: 600;
+  cursor: default;
+}
+.tab-btn.sortable-chosen {
+  cursor: grabbing;
+}
+
+/* --- Board scroll --- */
+.board-scroll {
+  min-height: calc(100vh - 200px);
+  scroll-snap-type: x proximity;
+}
+.board-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+.board-scroll::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 6px;
+}
+.board-scroll::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 6px;
+}
+.board-scroll::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* --- Day column --- */
+.day-col {
+  scroll-snap-align: start;
+}
+.day-col .card-list::-webkit-scrollbar {
+  width: 6px;
+}
+.day-col .card-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+/* --- Column header drag handle cursor --- */
+.day-header {
+  cursor: grab;
+}
+.day-header:active {
+  cursor: grabbing;
+}
+
+/* --- Card --- */
+.card {
+  user-select: none;
+  -webkit-user-drag: element;
+  /* iOS Safari: prevent page scroll during card drag */
+  touch-action: none;
+}
+.card:active {
+  cursor: grabbing;
+}
+
+/* --- Board: allow horizontal swipe freely --- */
+.board-scroll {
+  /* overscroll-behavior prevents scroll chaining on iOS */
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Day card-list: vertical scroll on iOS --- */
+.card-list {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Sunset card: gradient background --- */
+.sunset-bg {
+  background: linear-gradient(135deg, #fb923c 0%, #ef4444 40%, #be185d 100%);
+}
+
+/* --- Type badge spacing --- */
+.type-badge .type-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* --- Card links hover --- */
+.card-links a:hover {
+  transform: translateY(-1px);
+}
+
+/* --- Sortable ghost (dragged item placeholder) --- */
+.sortable-ghost {
+  opacity: 0.3 !important;
+  background: #e0e7ff !important;
+  border-style: dashed !important;
+}
+
+/* --- Sortable drag (item being dragged) --- */
+.sortable-drag {
+  transform: rotate(2deg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* --- Checklist labels --- */
+.checklist-cb {
+  width: 16px;
+  height: 16px;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+.checklist-cb:checked + label {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* --- Checklist editable fields --- */
+.section-name {
+  transition: border-color 0.15s ease;
+}
+.item-text {
+  transition: border-color 0.15s ease;
+}
+.cb-responsible {
+  min-width: 120px;
+  max-width: 140px;
+}
+
+/* --- Modal overlay: prevent body scroll when open --- */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* --- Modal container --- */
+#card-modal {
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+#card-modal > div {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
+}
+#card-modal > div::-webkit-scrollbar {
+  width: 6px;
+}
+#card-modal > div::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+
+/* --- Photo-specific fields highlight --- */
+#photo-fields {
+  transition: opacity 0.2s ease;
+}
+#modal-view-photo {
+  border-left: 3px solid #f472b6;
+}
+
+/* --- Photo inspiration badge on card --- */
+.card a[href*="pinterest"],
+.card a[href*="unsplash"] {
+  font-style: italic;
+}
+
+/* --- Responsible badge colors --- */
+.responsible-eu    { background: #dbeafe; color: #1e40af; }
+.responsible-namorada { background: #fce7f3; color: #9d174d; }
+.responsible-ambos { background: #d1fae5; color: #065f46; }
+
+/* --- Mobile adjustments --- */
+@media (max-width: 768px) {
+  .day-col {
+    width: 85vw !important;
+  }
+  h1 { font-size: 1.1rem; }
+
+  /* Larger tap targets for links on mobile */
+  .card a {
+    padding: 4px 8px !important;
+  }
+
+  /* Modal full-screen on mobile */
+  #card-modal > div {
+    max-height: 95vh;
+    margin: 0.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .cb-responsible {
+    min-width: 100px;
+    font-size: 0.7rem;
+  }
+}
+
+/* --- Print friendly (Ctrl+P) --- */
+@media print {
+  header { position: relative; }
+  #card-modal { display: none !important; }
+  .board-scroll {
+    display: block !important;
+    overflow: visible !important;
+  }
+  .day-col {
+    width: 100% !important;
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+    max-height: none !important;
+  }
+  .card-list {
+    overflow: visible !important;
+  }
+  .tab-btn, #btn-reset, #btn-export { display: none; }
+  #tab-board { display: block !important; }
+  #tab-budget, #tab-checklist, #tab-map, #tab-info { display: none !important; }
+}
