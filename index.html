@@ -31,7 +31,10 @@
         <p class="text-xs md:text-sm opacity-90">30/06/2026 → 14/07/2026 · 15 dias · Santiago + arredores</p>
       </div>
       <div class="flex items-center gap-2 flex-wrap text-xs md:text-sm">
-        <span class="bg-white/10 px-3 py-1 rounded-full">💱 R$ 1 = 175 CLP</span>
+        <span id="rate-display" class="bg-white/10 px-3 py-1 rounded-full">💱 R$ 1 = <span id="rate-value">175</span> CLP</span>
+        <button id="btn-update-rate" class="bg-emerald-500/80 hover:bg-emerald-400 px-3 py-1 rounded-full flex items-center gap-1 transition-colors">
+          <i data-lucide="refresh-cw" class="w-3 h-3"></i> <span id="rate-btn-label">Atualizar cotação</span>
+        </button>
         <button id="btn-reset" class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full flex items-center gap-1">
           <i data-lucide="rotate-ccw" class="w-3 h-3"></i> Resetar tudo
         </button>
@@ -340,7 +343,8 @@
           section: s.section,
           items: s.items.map((it, j) => ({ id: `sec-${i}-it-${j}`, text: it.text, responsible: it.responsible || '', done: false }))
         })),
-        activeTab: 'board'
+        activeTab: 'board',
+        rateBRLtoCLP: TRIP_META.rateBRLtoCLP
       };
     }
 
@@ -372,7 +376,8 @@
           dayCards: mergedDayCards,
           deletedCards: s.deletedCards || [],
           checklist: s.checklist || fresh.checklist,
-          activeTab: s.activeTab || 'board'
+          activeTab: s.activeTab || 'board',
+          rateBRLtoCLP: s.rateBRLtoCLP || fresh.rateBRLtoCLP
         };
       } catch (e) {
         return freshState();
@@ -386,7 +391,15 @@
     // ===========================================================================
     function brl(v) {
       if (!v) return 'Grátis';
-      return 'R$ ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+      const currentRate = state?.rateBRLtoCLP || TRIP_META.rateBRLtoCLP;
+      const adjusted = Math.round(v * TRIP_META.rateBRLtoCLP / currentRate);
+      return 'R$ ' + adjusted.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+
+    function updateRateDisplay() {
+      const rate = state?.rateBRLtoCLP || TRIP_META.rateBRLtoCLP;
+      const el = document.getElementById('rate-value');
+      if (el) el.textContent = rate;
     }
 
     function parseDuration(d) {
@@ -951,7 +964,35 @@
     // ===========================================================================
     // HEADER BUTTONS
     // ===========================================================================
+    async function fetchRate() {
+      const btn = document.getElementById('btn-update-rate');
+      const label = document.getElementById('rate-btn-label');
+      btn.disabled = true;
+      label.textContent = 'Buscando…';
+      try {
+        const res = await fetch('https://open.er-api.com/v6/latest/BRL');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const clpRate = data.rates?.CLP;
+        if (!clpRate || clpRate < 10) throw new Error('Cotação inválida');
+        const rounded = Math.round(clpRate);
+        state.rateBRLtoCLP = rounded;
+        saveState();
+        updateRateDisplay();
+        renderBoard();
+        renderBudget();
+        label.textContent = 'Atualizado ✓';
+        setTimeout(() => { label.textContent = 'Atualizar cotação'; btn.disabled = false; }, 3000);
+      } catch (err) {
+        console.error('Erro ao buscar cotação:', err);
+        label.textContent = 'Erro — tente novamente';
+        setTimeout(() => { label.textContent = 'Atualizar cotação'; btn.disabled = false; }, 3000);
+      }
+    }
+
     function setupHeaderButtons() {
+      document.getElementById('btn-update-rate').addEventListener('click', fetchRate);
+
       document.getElementById('btn-reset').addEventListener('click', () => {
         if (confirm('Resetar TUDO: ordem dos dias, cards customizados, checklist, ordem das tabs?')) {
           localStorage.removeItem(STORAGE_KEY);
@@ -985,6 +1026,7 @@
       state = loadState();
       renderTabs();
       switchTab(state.activeTab || 'board');
+      updateRateDisplay();
       renderBoard();
       setupModal();
       setupChecklistButtons();
