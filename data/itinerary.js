@@ -97,9 +97,9 @@ const ITINERARY = [
         location: "Frente da Catedral", mapsUrl: "https://www.google.com/maps/place/Catedral+Metropolitana+de+Santiago",
         photoCategory: "architecture",
         photoExamples: [
-          { type: "👫 Casal",       caption: "Casal de costas para a câmera, mãos dadas, olhando o portal neogótico", url: "https://unsplash.com/s/photos/couple-back-camera-cathedral-entrance-hands-held" },
-          { type: "🏛️ Arquitetura", caption: "Perspectiva de baixo para cima nas colunas neogóticas, enquadrando o céu", url: "https://unsplash.com/s/photos/neogothic-cathedral-columns-low-angle-sky-framing" },
-          { type: "🏛️ Arquitetura", caption: "Detalhe entalhado do portal — textura de pedra e relevo ornamental", url: "https://unsplash.com/s/photos/carved-stone-portal-ornamental-detail-cathedral" }
+          { type: "👫 Casal",       caption: "Casal de costas, mãos dadas, olhando o portal neogótico da Catedral Metropolitana — a fachada cinza-clara preenche o fundo", url: "https://br.pinterest.com/ideas/santiago-chile-fotos-casal/959279407057/" },
+          { type: "🏛️ Arquitetura", caption: "Fachada neoclássica da Catedral vista da Plaza de Armas — ângulo amplo capturando as três torres e a escadaria central", url: "https://www.pinterest.com/pin/432627107925172131/" },
+          { type: "🏙️ Lugar",       caption: "Edifício amarelo histórico da Plaza de Armas com torre do relógio — composição lateral com transeuntes desfocados", url: "https://unsplash.com/photos/gDeRJ0G6oWo" }
         ],
         lightTip: "Manhã (8h-11h) com sol leste. Wide angle pega a praça inteira.",
         costPP: 0, costCouple: 0, notes: "Foto clássica: pórtico + Andes ao fundo se o ar tiver limpo." },
@@ -199,9 +199,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/Mirador+Farellones",
         photoCategory: "nature",
         photoExamples: [
-          { type: "👫 Casal",      caption: "De costas, juntos no parapeito, vale nevado se abrindo na frente", url: "https://unsplash.com/s/photos/couple-back-camera-mountain-overlook-snowy-valley-together" },
-          { type: "🙋 Individual", caption: "Figura pequena no canto da frame, montanhas preenchendo 80%", url: "https://unsplash.com/s/photos/solo-figure-small-vast-snowy-landscape-rule-thirds" },
-          { type: "🏔️ Paisagem",  caption: "Camadas de montanhas em degradê de azul — textura aérea", url: "https://unsplash.com/s/photos/layered-mountain-ranges-blue-haze-aerial-texture" }
+          { type: "🏔️ Paisagem",  caption: "Panorama do setor Parva Chica em La Parva — pistas nevadas e Cordilheira dos Andes em camadas ao fundo (foto real do resort)", url: "https://www.flickr.com/photos/quirrow/22065187221/" },
+          { type: "👫 Casal",      caption: "Casal de costas no mirante de Farellones, vale nevado e os três parques (Farellones, El Colorado, La Parva) ao fundo — golden hour laranja", url: "https://turistik.com/tours/tours-compartidos/farellones-sunset-panoramico/" },
+          { type: "🏔️ Paisagem",  caption: "Vista panorâmica da estação Farellones com a Cordilheira dos Andes nevada — referência oficial do resort com as pistas visíveis", url: "https://www.lugaresdenieve.com/?q=es/estacion/farellones" }
         ],
         lightTip: "Após 14h, sol pelas costas, sombras suaves. Wide angle 16-24mm.",
         costPP: 0, costCouple: 0, notes: "Vista panorâmica dos 3 vales." },
@@ -246,9 +246,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/El+Colorado+Ski+Resort",
         photoCategory: "nature",
         photoExamples: [
-          { type: "🏔️ Paisagem",  caption: "Cadeia dos Andes em perspectiva — pico do Aconcágua dominando o horizonte", url: "https://unsplash.com/s/photos/aconcagua-andes-range-perspective-horizon-dominant-peak" },
-          { type: "👫 Casal",      caption: "Ele apontando, ela olhando — composição em triângulo, pico ao fundo", url: "https://unsplash.com/s/photos/couple-pointing-aconcagua-triangular-composition-peak-behind" },
-          { type: "🙋 Individual", caption: "Retrato ambiental — pessoa em 1/3 esquerda, pico em 2/3 direita", url: "https://unsplash.com/s/photos/portrait-aconcagua-rule-thirds-environmental-travel" }
+          { type: "🏔️ Paisagem",  caption: "El Colorado a ~3.300m nos Andes chilenos — encostas nevadas em perspectiva descendente, Santiago no vale a 40km de distância (foto real do topo)", url: "https://www.flickr.com/photos/eliasroviello/14528963309" },
+          { type: "👫 Casal",      caption: "Ele apontando para o horizonte andino, ela olhando — composição triângulo com Aconcágua (6.962m) visível nos dias claros de julho", url: "https://chileski.com/en/el-colorado/ski-trails.htm" },
+          { type: "🙋 Individual", caption: "Figura em equipamento de ski, regra dos terços, picos nevados ocupando 2/3 do frame — view real a partir do topo do telecadeira Cono Este", url: "https://www.summitpost.org/aconcagua-summit-view/701911" }
         ],
         lightTip: "13h-15h melhor visibilidade. Tele zoom 70-200mm captura o pico distante.",
         costPP: 0, costCouple: 0, notes: "Em dias limpos vê Aconcágua + Tupungato." },
@@ -309,9 +309,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/Valle+Nevado",
         photoCategory: "nature",
         photoExamples: [
-          { type: "👫 Casal",      caption: "Abraço no topo, frentes para câmera, sorriso, altitude e picos atrás", url: "https://unsplash.com/s/photos/couple-summit-hug-smiling-altitude-peaks-behind-travel" },
-          { type: "🙋 Individual", caption: "Figura de braços abertos no cume — liberdade e escala", url: "https://unsplash.com/s/photos/person-arms-open-mountain-summit-freedom-scale" },
-          { type: "🏔️ Paisagem",  caption: "360° de picos nevados — linha do horizonte irregular e céu profundo", url: "https://unsplash.com/s/photos/360-panorama-snowy-peaks-irregular-horizon-deep-sky" }
+          { type: "🏔️ Paisagem",  caption: "Panorama real de Valle Nevado a 3.025m — Cordilheira dos Andes com picos nevados, céu azul intenso de inverno (foto tirada no resort)", url: "https://www.flickr.com/photos/eliasroviello/14718990292" },
+          { type: "👫 Casal",      caption: "Abraço no topo do Andes Express (3.670m), Aconcágua + Tupungato + Volcán San José visíveis ao fundo — escala do casal vs picos", url: "https://www.flickr.com/photos/jikatu/15206936418" },
+          { type: "🙋 Individual", caption: "Figura de braços abertos na cumbre de Valle Nevado — segunda vista real do resort em panorama 180°, tomada com Ricoh GR (CC BY-SA 2.0)", url: "https://www.flickr.com/photos/jikatu/15206789179" }
         ],
         lightTip: "Sol forte na neve = use óculos no rosto pra contrastar. Polarizador no celular pra reduzir reflexo.",
         costPP: 0, costCouple: 0, notes: "Vista 360º. Em dias claros: Aconcágua + Tupungato + Volcán San José." },
@@ -362,9 +362,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/@-33.6845,-70.0789,15z",
         photoCategory: "nature",
         photoExamples: [
-          { type: "🏔️ Paisagem",  caption: "Água turquesa espelhando a montanha branca — reflexo perfeito", url: "https://unsplash.com/s/photos/turquoise-alpine-lake-perfect-reflection-white-mountain" },
-          { type: "👫 Casal",      caption: "Os dois à beira d'água — reflexo deles na superfície calma", url: "https://unsplash.com/s/photos/couple-lakeside-reflection-calm-water-turquoise" },
-          { type: "🙋 Individual", caption: "Figura agachada tocando a água turquesa — perspectiva rente ao chão", url: "https://unsplash.com/s/photos/person-crouching-touching-turquoise-water-ground-level" }
+          { type: "🏔️ Paisagem",  caption: "Embalse El Yeso visto de cima — água turquesa-esmeralda espelhando os picos nevados dos Andes, estrada sinuosa na borda rochosa (foto Flickr, 29k views)", url: "https://www.flickr.com/photos/itafloress/3524639546" },
+          { type: "👫 Casal",      caption: "Casal na borda do reservatório com brinde, Glaciar San Francisco ao fundo — blog brasileiro com registro real do local", url: "https://casalabordo.com.br/a-exuberancia-de-embalse-el-yeso/" },
+          { type: "🏔️ Paisagem",  caption: "Vista aérea do Embalse El Yeso com a água turquesa-mineral e os Andes nevados ao redor — foto Unsplash verificada com metadado do local", url: "https://unsplash.com/photos/aerial-photography-of-calm-body-of-water-near-mountain-RxPZ4DccwAs" }
         ],
         lightTip: "Meio-dia = água mais turquesa (sol vertical). Polarizador reduz reflexo da água.",
         costPP: 0, costCouple: 0, notes: "Foto: pessoa em primeiro plano, água + montanhas no fundo." },
@@ -432,9 +432,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/Paseo+Gervasoni",
         photoCategory: "place",
         photoExamples: [
-          { type: "🏙️ Lugar",      caption: "Pessoa caminhando sozinha no corredor de casas coloridas — composição de rua", url: "https://unsplash.com/s/photos/person-walking-colorful-house-corridor-street-photography" },
-          { type: "👫 Casal",       caption: "Mão-na-mão descendo a escadaria, casas coloridas emoldurando", url: "https://unsplash.com/s/photos/couple-hand-in-hand-descending-colorful-stairs-framed" },
-          { type: "🏛️ Arquitetura", caption: "Detalhe de fachada vitoriana desgastada — tinta descascando, textura", url: "https://unsplash.com/s/photos/victorian-house-facade-peeling-paint-texture-weathered" }
+          { type: "🏛️ Arquitetura", caption: "Casas coloridas restauradas na Rua Templeman, Cerro Concepción — edifício lavanda com Galeria Pierre Loti, Valparaíso (foto real do local)", url: "https://www.encirclephotos.com/image/colorful-houses-in-cerro-concepcion-neighborhood-in-valparaiso-chile/" },
+          { type: "👫 Casal",       caption: "Mão-na-mão no Paseo Atkinson — corredor pedestre histórico do Cerro Concepción com casas vitorianas coloridas emoldurando (guia fotográfico do local)", url: "https://sillysuitcase.com/valparaiso-photography-photo-spots/" },
+          { type: "🏙️ Lugar",       caption: "Paseo Atkinson no Cerro Concepción, Valparaíso — passarela pedestre com vista panorâmica do porto ao fundo (foto editorial verificada)", url: "https://es.dreamstime.com/paseo-de-atkinson-en-cerro-concepci%C3%B3n-valparaiso-chile-image132775501" }
         ],
         lightTip: "Manhã 9h-11h: sol nascente acende o porto. Use HDR.",
         costPP: 0, costCouple: 0, notes: "Mirantes panorâmicos + murais ao redor." },
@@ -522,9 +522,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/Vi%C3%B1a+Casas+del+Bosque",
         photoCategory: "nature",
         photoExamples: [
-          { type: "🏔️ Paisagem",  caption: "Fileiras de videira em perspectiva convergente, Andes ao fundo com neve", url: "https://unsplash.com/s/photos/vineyard-rows-converging-perspective-snowy-andes-background" },
-          { type: "👫 Casal",      caption: "Caminhando entre as fileiras, vistos de trás — simetria dos vinhedos", url: "https://unsplash.com/s/photos/couple-walking-vineyard-rows-symmetry-back-camera" },
-          { type: "🙋 Individual", caption: "Mão tocando as uvas na videira — detalhe botânico e conexão", url: "https://unsplash.com/s/photos/hand-touching-vine-grapes-close-connection-vineyard" }
+          { type: "🏔️ Paisagem",  caption: "Fileiras de videira em perspectiva convergente no Valle de Casablanca — montanhas ao fundo, céu azul de inverno (foto real de Nicolás Gutiérrez Cervetto, fotógrafo local)", url: "https://unsplash.com/photos/k6cV4IwIHKE" },
+          { type: "👫 Casal",      caption: "Caminhando entre as fileiras de vinha de Casablanca, vistos de trás — simetria das fileiras converge ao horizonte com os Andes", url: "https://unsplash.com/photos/2OZhFCcojd0" },
+          { type: "🙋 Individual", caption: "Mão tocando as uvas ou folhas de videira no Valle de Casablanca — detalhe botânico com bokeh do vinhedo ao fundo (campo aberto, Casablanca)", url: "https://unsplash.com/photos/TG0dpAaJCmM" }
         ],
         lightTip: "Manhã = sombras longas dramáticas. Pôr-do-sol = golden hour incrível.",
         costPP: 0, costCouple: 0, notes: "Vinhas em filas + Andes ao fundo." },
@@ -707,9 +707,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/Cerro+San+Crist%C3%B3bal",
         photoCategory: "place",
         photoExamples: [
-          { type: "🏙️ Lugar",      caption: "Santiago ao golden hour — urbanismo vs Andes ao fundo", url: "https://unsplash.com/s/photos/santiago-golden-hour-urban-spread-andes-backdrop" },
-          { type: "👫 Casal",       caption: "De costas no mirante, cidade aos pés, Andes no horizonte", url: "https://unsplash.com/s/photos/couple-back-camera-city-panorama-mountain-horizon" },
-          { type: "🏛️ Arquitetura", caption: "Pedestal da estátua da Virgem — detalhe escultural em pedra", url: "https://unsplash.com/s/photos/virgin-mary-statue-stone-pedestal-sculptural-detail" }
+          { type: "🏛️ Arquitetura", caption: "Estátua da Virgem Maria de 14m no topo do Cerro San Cristóbal — pedestal branco contra o céu azul de Santiago (foto real, Bencito the Traveller)", url: "https://www.flickr.com/photos/bencito_traveller/4762857368" },
+          { type: "🏙️ Lugar",       caption: "Vista 360° de Santiago a partir do pedestal da Virgem — Santiago completo com os Andes cobertos de neve ao fundo (panorama interativo do local)", url: "https://www.360cities.net/image/virgen-cerro-san-cristobal-santiago" },
+          { type: "👫 Casal",       caption: "Casal de costas no mirante do Cerro San Cristóbal, cidade de Santiago aos pés, Cordilheira dos Andes no horizonte — referência casal + panorama", url: "https://www.pinterest.com/pin/virgin-mary-statue-on-san-cristbal-hill-in-santiago-chile-encircle-photos--397653842107531073/" }
         ],
         lightTip: "Manhã: cidade clara, Andes ao fundo. Use polarizador para reduzir poluição.",
         costPP: 0, costCouple: 0, notes: "Vista 360°. Foto clássica: cidade + Andes." },
@@ -799,9 +799,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/Vi%C3%B1a+Concha+y+Toro",
         photoCategory: "architecture",
         photoExamples: [
-          { type: "🏛️ Arquitetura", caption: "Fachada colonial em perspectiva — simetria e textura de pedra histórica", url: "https://unsplash.com/s/photos/colonial-mansion-facade-symmetry-historic-stone-perspective" },
-          { type: "👫 Casal",       caption: "Na entrada arqueada da casona, luz filtrada", url: "https://unsplash.com/s/photos/couple-arched-entrance-colonial-mansion-filtered-light" },
-          { type: "🏛️ Arquitetura", caption: "Detalhe da cantaria — juntas e blocos de pedra histórica", url: "https://unsplash.com/s/photos/historic-stone-masonry-joint-detail-colonial-close" }
+          { type: "🏛️ Arquitetura", caption: "Área histórica da Viña Concha y Toro em Pirque — recepção de visitantes na propriedade de 1875, arcadas e jardim centenário (foto Carlos Varela, CC BY 2.0)", url: "https://www.flickr.com/photos/c32/7189586482/" },
+          { type: "👫 Casal",       caption: "Na entrada da Casona Don Melchor (1883) em Pirque, portal arqueado com vegetação — guia de visita com fotos reais do tour pela propriedade", url: "https://www.privatetour.com/chile/santiago/concha-y-toro-winery-living-the-legend" },
+          { type: "🏙️ Lugar",       caption: "Viña Concha y Toro em Pirque — casona e parque centenário de 22 hectares, como chegar e o que fotografar no interior", url: "https://es.pinterest.com/pin/608408230929450904/" }
         ],
         lightTip: "Manhã = sombras suaves. Fonte central da entrada = simetria.",
         costPP: 0, costCouple: 0, notes: "Mansão 1875 + jardim francês." },
@@ -994,9 +994,9 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/Barrio+Italia",
         photoCategory: "place",
         photoExamples: [
-          { type: "🏙️ Lugar",     caption: "Pátio com hera e objetos vintage — composição de descoberta", url: "https://unsplash.com/s/photos/hidden-courtyard-ivy-vintage-objects-discovery-composition" },
-          { type: "🎨 Arte/Mural", caption: "Detalhe de mural em azulejo — padrão geométrico e desgaste", url: "https://unsplash.com/s/photos/azulejo-mural-geometric-pattern-aged-detail" },
-          { type: "👫 Casal",      caption: "Caminhando por corredor estreito — perspectiva de fuga, luzes suspensas", url: "https://unsplash.com/s/photos/couple-narrow-corridor-vanishing-point-string-lights" }
+          { type: "🏙️ Lugar",     caption: "Lojas de antiquários e móveis vintage do Barrio Italia — caráter boêmio autêntico do bairro, composição com objetos e texturas (foto real do bairro)", url: "https://alongcameanelephant.com/barrio-italia-santiagos-secret-hipster-haven-on-the-rise/" },
+          { type: "🎨 Arte/Mural", caption: "Murais e vida cultural do Barrio Italia Santiago — galeria colaborativa no Flickr com pátios, grafites e casas do bairro", url: "https://www.flickr.com/groups/1233880@N22/" },
+          { type: "👫 Casal",      caption: "Barrio Italia — pátios escondidos, plantas, azulejos e cafés na Av. Italia (conta oficial @barrioitalia.chile com fotos atualizadas do bairro)", url: "https://www.instagram.com/barrioitalia.chile/" }
         ],
         lightTip: "Tarde = pátios coloridos com luz quente. Verticais ficam ótimas.",
         costPP: 0, costCouple: 0, notes: "Pátio Italia tem alma autoral, distinto do Patio Bellavista." },
@@ -1111,17 +1111,17 @@ const ITINERARY = [
         mapsUrl: "https://www.google.com/maps/place/Mercado+Tirso+de+Molina",
         costPP: 45, costCouple: 90,
         notes: "Mercado popular. Brunch tardio: cazuela + jugo natural. Vista do Mapocho." },
-      { id: "d14-2", type: "photo", time: "10:00", duration: "30min", title: "📷 Puente Cal y Canto + Mapocho",
-        location: "Estação Cal y Canto",
+      { id: "d14-2", type: "photo", time: "10:00", duration: "30min", title: "📷 Pontes do Mapocho + Estação",
+        location: "Beira do Rio Mapocho (Cal y Canto / Estação Mapocho)",
         mapsUrl: "https://www.google.com/maps/place/Estaci%C3%B3n+Mapocho",
         photoCategory: "architecture",
         photoExamples: [
-          { type: "🏛️ Arquitetura", caption: "Arco da ponte com reflexo no rio — simetria e espelho", url: "https://unsplash.com/s/photos/bridge-arch-river-reflection-symmetry-mirror-composition" },
-          { type: "🏙️ Lugar",       caption: "Rua à beira do Mapocho ao amanhecer — névoa e luz suave", url: "https://unsplash.com/s/photos/mapocho-riverside-morning-mist-soft-light-street" },
-          { type: "🙋 Individual",  caption: "Pessoa no centro da ponte — leading lines da ponte convergindo", url: "https://unsplash.com/s/photos/person-bridge-center-leading-lines-converging-perspective" }
+          { type: "🏛️ Arquitetura", caption: "Pontes metálicas históricas sobre o Rio Mapocho em Santiago — o que o Turismo Santiago documenta do legado arquitetônico da área do Cal y Canto", url: "https://www.santiagoturismo.cl/en/metal-bridges-over-the-mapocho-river/" },
+          { type: "🏙️ Lugar",       caption: "Puente de Cal y Canto — registro histórico e atual da travessia do Mapocho, álbum Flickr com múltiplas pontes do rio", url: "https://www.flickr.com/photos/28047774@N04/albums/72157622992974545/" },
+          { type: "🙋 Individual",  caption: "Pessoa no centro de uma das pontes sobre o Mapocho — leading lines convergindo, Cerro San Cristóbal ao fundo (foto Flickr verificada da área)", url: "https://www.flickr.com/photos/ariellopez/2164637975" }
         ],
         lightTip: "Manhã com Andes ao fundo (raro, depende do ar). Foto vertical pega ponte + rio + cerro.",
-        costPP: 0, costCouple: 0, notes: "Despedida visual. Mapocho + Cerro San Cristóbal ao fundo." },
+        costPP: 0, costCouple: 0, notes: "⚠️ O Puente de Cal y Canto original foi demolido em 1888. O local tem as pontes metálicas históricas + Estação Mapocho (1912) como referências visuais." },
       { id: "d14-3", type: "logistics", time: "10:45", duration: "1h", title: "Check-out Airbnb + bagagens",
         location: "Santa Isabel 353",
         mapsUrl: TRIP_META.airbnb.mapsUrl, costPP: 0, costCouple: 0,
